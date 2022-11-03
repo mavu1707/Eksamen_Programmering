@@ -13,23 +13,26 @@
             <label for="text">Enter text to ransomize:</label>
             <textarea id="text" name="name" rows="8"></textarea>
         </p>
-        <button onclick="makeRansom()">Ransomize text</button>
+        <button id="test" onclick="makeRansom()">Ransomize text</button>
     </section>
     <section id="ransom-note">
 
     </section>
     <script>
+
         //Prepare array with allowed characters
         const allowedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         const allowedCharactersArray = Array.from(allowedCharacters)
+        console.log(allowedCharactersArray);
 
-        document.querySelector('button').addEventListener("click", makeRansom)
+        /*Lager en event Listener som sjekker om knappen med id ransome-note blir trykket ned, så skal funksjonen makeRansom kjøre*/
+        document.getElementById("test").addEventListener("click", makeRansom)
         //Create function to run on button click
         function makeRansom() {
             //TODO: Fetch text from textarea
-            const print = document.getElementById("ransom-note").value
-            document.getElementById("text").innerHTML = print
-            console.log(print);
+            const printOut = document.getElementById("input-form").value
+            document.getElementById("text").innerHTML = printOut
+            console.log(printOut);
             
             //TODO: Ensure correct capitalization of text string fetched
             
