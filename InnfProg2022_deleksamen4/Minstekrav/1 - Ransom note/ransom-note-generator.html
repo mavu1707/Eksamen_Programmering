@@ -30,16 +30,17 @@
         //Create function to run on button click
         function makeRansom() {
             //TODO: Fetch text from textarea
-            const printOut = document.getElementById("text").value
-            console.log(printOut);
+            let printOut = document.getElementById("text").value
             
             //TODO: Ensure correct capitalization of text string fetched
+            let toUpper = printOut.toUpperCase()
 
             //TODO: Make capitalized text string into array
-            
-            
+            /*Lenke som er brukt: https://www.samanthaming.com/tidbits/83-4-ways-to-convert-string-to-character-array/*/
+            let splitString = toUpper.split('')
+            console.log(splitString)
             //TODO: Prepare empty string variable for HTML
-           
+            let userRansom = ""
 
             /* TODO:
              * 1) Go through array of characters
