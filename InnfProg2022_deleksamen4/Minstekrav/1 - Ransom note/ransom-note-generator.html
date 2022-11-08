@@ -37,7 +37,7 @@
 
             //TODO: Make capitalized text string into array
             /*Lenke som er brukt: https://www.samanthaming.com/tidbits/83-4-ways-to-convert-string-to-character-array/*/
-            let splitString = toUpper.split('')
+            let stringToArray = toUpper.split('')
 
             //TODO: Prepare empty string variable for HTML
             let userRansom = ""
@@ -52,7 +52,12 @@
              *       use the end.png-file (image of exclamation mark)
              *    2) If character is a space, insert <span class="space-separator"></span> into variabel for HTML
              * */
-
+            //1 Done
+            stringToArray.map(
+                (test) => { userRansom += `<li>${test}</li>`}
+            )
+            document.getElementById("ransom-note").innerHTML = userRansom
+            
             //TODO: Write HTML output to #ransom-note
             
         }
