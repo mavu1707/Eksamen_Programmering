@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Exam 2</h1>
-        <button id="toggleMenu" aria-label="Open the menu">Menu <img src="menuicon.png" aria-hidden="true"></button>
+        <button onclick="hideAndShowMenu()" id="toggleMenu" aria-label="Open the menu">Menu <img src="menuicon.png" aria-hidden="true"></button>
         <nav id="menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -48,8 +48,23 @@
          * 1) legg til klassen .active på #menu
          * 2) endre knappen til å inneholde teksten Close og bildet closeicon.png
          */
+        /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show*/
+         function hideAndShowMenu(){
+            let test = document.getElementById("menu")
+            let openMenu = "Menu"
+            let closeMenu = "Close"
+            let openMenuIcon
+            let closeMenuIcon
 
-        
+            if(test.style.display === "none"){
+                test.style.display = "block"
+                button.innerHTML = openMenu + openMenuIcon
+            }else{
+                test.style.display = "none"
+                button.innerHTML = closeMenu + closeMenuIcon
+
+            }
+         }
 
         //Variabel for meny-HTML
         //TODO: Skal ikke starte som en tom streng, må inneholde et punkt for å møte oppgaveteksten...
