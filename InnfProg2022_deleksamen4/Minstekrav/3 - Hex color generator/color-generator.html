@@ -86,7 +86,13 @@
 
             //TODO: Print the color values to the respective code-containers:
 
-            div.style.backgroundColor = hexPrimaryColor
+            let prim = document.getElementById("primary-color")
+            let sec = document.getElementById("secondary-color")
+            let thir = document.getElementById("third-color")
+
+            prim.style.backgroundColor = hexPrimaryColor
+            sec.style.backgroundColor = hexSecondaryColor
+            thir.style.backgroundColor = hexThirdColor
         }
 
         //TODO: Make the function run on button click
