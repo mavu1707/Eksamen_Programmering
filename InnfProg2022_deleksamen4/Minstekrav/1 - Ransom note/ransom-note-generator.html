@@ -56,6 +56,12 @@
             stringToArray.map(
                 (test) => { userRansom += `${test}`}
             )
+
+            if(stringToArray === allowedCharactersArray){
+                console.log("allowed");
+            }else{
+                console.log("ikke");
+            }
             
 
             document.getElementById("ransom-note").innerHTML = userRansom
