@@ -23,7 +23,7 @@
             </div>
             <div id="startgame">
                 <p id="startmessage"></p>
-                <button id="startbutton">New game</button>
+                <button id="startbutton" onclick="newGame()">New game</button>
             </div>
         </div>
         <div id="userGuessed">
@@ -67,10 +67,13 @@
         //Function to start a game
         function newGame() {
             //SETS/RESETS:
+            document.getElementById("userInputArea").style.display = "block"
+            document.getElementById("startgame").style.display = "none"
+            document.getElementById("startmessage").style.display = "none"
             //TODO: Set/Reset counter
-            counter = 90
+            counter = 10
             //TODO: Reset user guessed array
-            
+            let userCorrectGuesses = []
 
             /* TODO: 
              * INTERFACE UPDATES
@@ -88,7 +91,6 @@
              */
             
         }
-
         
 
         //Function for country-control when Enter is clicked
@@ -121,7 +123,20 @@
              * Update interface colors at 45 and 20 seconds left
              * Stop timer when counter reaches zero, and set gameover()
              */
-            
+            const timer = document.getElementById("countdown")
+            timer.innerHTML = counter
+            counter--
+            if(counter < 45 && counter > 20){
+                timer.style.color = "orange"
+            }else if(counter < 20 && counter === 0){
+                timer.style.color = "red"
+            }else if(counter < 0){
+                clearInterval(countdown)
+                gameover()
+                counter = 0
+                /*Teller fortsatt i bakgrunnen*/
+            }
+
         }
         
 
@@ -133,7 +148,7 @@
             document.getElementById("startgame").style.display = "block"
             document.getElementById("startmessage").innerHTML = `You managed to guess ${userCorrectGuesses.length} of ${countries.length} countries! Good job. Wanna try again?`
         }
-
+        setInterval(countdown, 1000)
         //Initial game run on page load:
         newGame()
     </script>
