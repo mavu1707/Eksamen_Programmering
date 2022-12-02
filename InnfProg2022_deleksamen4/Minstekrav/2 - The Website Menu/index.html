@@ -50,19 +50,17 @@
          */
         /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show*/
          function hideAndShowMenu(){
-            let test = document.getElementById("menu")
-            let openMenu = "Menu"
-            let closeMenu = "Close"
-            let openMenuIcon
-            let closeMenuIcon
+            let image = document.getElementById("toggleMenu")
+            let openImg = `<img src="menuicon.png"/>`
+            let closeImg = `<img src="closeicon.png"/>`
 
-            if(test.style.display === "none"){
-                test.style.display = "block"
-                button.innerHTML = openMenu
+            if(document.querySelector('#menu .active') !== null){
+                document.querySelector('#menu .active').classList.remove('active')
+                button.textContent = 'Menu' + openImg
+
             }else{
-                test.style.display = "none"
-                button.innerHTML = closeMenu 
-
+                menu.className = "active"
+                button.textContent = 'Close' + closeImg
             }
          }
 
