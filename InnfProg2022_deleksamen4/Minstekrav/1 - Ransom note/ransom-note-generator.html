@@ -59,12 +59,17 @@
 
             for (let i = 0; i < stringToArray.length; i++){
                 if(allowedCharactersArray.indexOf(stringToArray[i]) > -1){
-                    userRansom = `<img src="images/${stringToArray}.png"/>`
+                    userRansom += `<img src="images/${stringToArray[i]}.png"/>`
+                    console.log("bilde");
                     
                 }else if(stringToArray[i] === "." || stringToArray[i] === "!" || stringToArray[i] === "?"){
                     userRansom = `<img src="images/end.png"/>`
+                    console.log("slutt");
+                }else if(stringToArray[i] === " "){
+                    userRansom += `<span class="space-separator"></span>`
+                    console.log("space");
                 }
-                else{
+                else {
                     userRansom = stringToArray
                 }
             }
