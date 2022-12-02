@@ -54,128 +54,17 @@
              * */
             //1 Done
             stringToArray.map(
-                (test) => { userRansom + `${test}`}
+                (test) => {userRansom}
             )
 
             for (let i = 0; i < stringToArray.length; i++){
                 if(allowedCharactersArray.indexOf(stringToArray[i]) > -1){
-                    if(stringToArray[i] === "A"){
-                        userRansom = `<img src="images/A.png"/>`
-
-                    }else if(stringToArray[i] === "B"){
-                        userRansom = `<img src="images/B.png"/>`
-
-                    }else if(stringToArray[i] === "C"){
-                        userRansom = `<img src="images/C.png"/>`
-
-                    }else if(stringToArray[i] === "D"){
-                        userRansom = `<img src="images/D.png"/>`
-
-                    }else if(stringToArray[i] === "E"){
-                        userRansom = `<img src="images/E.png"/>`
-
-                    }else if(stringToArray[i] === "F"){
-                        userRansom = `<img src="images/F.png"/>`
-
-                    }else if(stringToArray[i] === "G"){
-                        userRansom = `<img src="images/G.png"/>`
-
-                    }else if(stringToArray[i] === "H"){
-                        userRansom = `<img src="images/H.png"/>`
-
-                    }else if(stringToArray[i] === "I"){
-                        userRansom = `<img src="images/I.png"/>`
-
-                    }else if(stringToArray[i] === "J"){
-                        userRansom = `<img src="images/J.png"/>`
-
-                    }else if(stringToArray[i] === "K"){
-                        userRansom = `<img src="images/K.png"/>`
-
-                    }else if(stringToArray[i] === "L"){
-                        userRansom = `<img src="images/L.png"/>`
-
-                    }else if(stringToArray[i] === "M"){
-                        userRansom = `<img src="images/M.png"/>`
-
-                    }else if(stringToArray[i] === "N"){
-                        userRansom = `<img src="images/N.png"/>`
-
-                    }else if(stringToArray[i] === "O"){
-                        userRansom = `<img src="images/O.png"/>`
-
-                    }else if(stringToArray[i] === "P"){
-                        userRansom = `<img src="images/P.png"/>`
-
-                    }else if(stringToArray[i] === "Q"){
-                        userRansom = `<img src="images/Q.png"/>`
-
-                    }else if(stringToArray[i] === "R"){
-                        userRansom = `<img src="images/R.png"/>`
-
-                    }else if(stringToArray[i] === "S"){
-                        userRansom = `<img src="images/S.png"/>`
-
-                    }else if(stringToArray[i] === "T"){
-                        userRansom = `<img src="images/T.png"/>`
-
-                    }else if(stringToArray[i] === "U"){
-                        userRansom = `<img src="images/U.png"/>`
-
-                    }else if(stringToArray[i] === "V"){
-                        userRansom = `<img src="images/V.png"/>`
-
-                    }else if(stringToArray[i] === "W"){
-                        userRansom = `<img src="images/w.png"/>`
-
-                    }else if(stringToArray[i] === "X"){
-                        userRansom = `<img src="images/x.png"/>`
-
-                    }else if(stringToArray[i] === "Y"){
-                        userRansom = `<img src="images/y.png"/>`
-
-                    }else if(stringToArray[i] === "Z"){
-                        userRansom = `<img src="images/Z.png"/>`
-
-                    }else if(stringToArray[i] === "0"){
-                        userRansom = `<img src="images/0.png"/>`
-
-                    }else if(stringToArray[i] === "1"){
-                        userRansom = `<img src="images/1.png"/>`
-
-                    }else if(stringToArray[i] === "2"){
-                        userRansom = `<img src="images/2.png"/>`
-
-                    }else if(stringToArray[i] === "3"){
-                        userRansom = `<img src="images/3.png"/>`
-
-                    }else if(stringToArray[i] === "4"){
-                        userRansom = `<img src="images/4.png"/>`
-
-                    }else if(stringToArray[i] === "5"){
-                        userRansom = `<img src="images/5.png"/>`
-
-                    }else if(stringToArray[i] === "6"){
-                        userRansom = `<img src="images/6.png"/>`
-
-                    }else if(stringToArray[i] === "7"){
-                        userRansom = `<img src="images/7.png"/>`
-
-                    }else if(stringToArray[i] === "8"){
-                        userRansom = `<img src="images/8.png"/>`
-
-                    }else if(stringToArray[i] === "9"){
-                        userRansom = `<img src="images/9.png"/>`
-
-                    }else if(stringToArray[i] === "." || "!" || "?"){
-                        userRansom = `<img src="images/end.png"/>`
-
-                    }else if(stringToArray[i] === " "){
-                       userRansom = `<span class="space-separator"></span>`
-
-                    }
+                    userRansom = `<img src="images/${stringToArray}.png"/>`
                     
-                }else{
+                }else if(stringToArray[i] === "." || stringToArray[i] === "!" || stringToArray[i] === "?"){
+                    userRansom = `<img src="images/end.png"/>`
+                }
+                else{
                     userRansom = stringToArray
                 }
             }

@@ -51,7 +51,7 @@
         /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show*/
          function hideAndShowMenu(){
             let image = document.getElementById("toggleMenu")
-            let openImg = `<img src="menuicon.png"/>`
+            let openImg = `<img src="menuicon.png" aria-hidden="true">`
             let closeImg = `<img src="closeicon.png"/>`
 
             if(document.querySelector('#menu .active') !== null){
