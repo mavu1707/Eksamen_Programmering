@@ -59,116 +59,121 @@
 
             /*https://stackoverflow.com/questions/35606319/need-to-output-image-depending-on-what-letter-is-typed-into-input-box-in-javascr*/
             for (let i = 0; i < stringToArray.length; i++){
-                let img = document.createElement("img");
-                let src = document.createAttribute("src");
+                let image = new Image()
                 if(allowedCharactersArray.indexOf(stringToArray[i]) > -1){
                     if(stringToArray[i] === "A"){
-                        console.log("A");
-                        img.src = "images/A.png"
+                        image.src = "images/A.png"
+
                     }else if(stringToArray[i] === "B"){
-                        console.log("B");
+                        image.src = "images/B.png"
 
                     }else if(stringToArray[i] === "C"){
-                        console.log("C");
+                        image.src = "images/C.png"
 
                     }else if(stringToArray[i] === "D"){
-                        console.log("D");
+                        image.src = "images/D.png"
 
                     }else if(stringToArray[i] === "E"){
-                        console.log("F");
+                        image.src = "images/E.png"
+
+                    }else if(stringToArray[i] === "F"){
+                        image.src = "images/F.png"
 
                     }else if(stringToArray[i] === "G"){
-                        console.log("G");
+                        image.src = "images/G.png"
 
                     }else if(stringToArray[i] === "H"){
-                        console.log("H");
+                        image.src = "images/H.png"
 
                     }else if(stringToArray[i] === "I"){
-                        console.log("I");
+                        image.src = "images/I.png"
 
                     }else if(stringToArray[i] === "J"){
-                        console.log("J");
+                        image.src = "images/J.png"
 
                     }else if(stringToArray[i] === "K"){
-                        console.log("K");
+                        image.src = "images/K.png"
 
                     }else if(stringToArray[i] === "L"){
-                        console.log("L");
+                        image.src = "images/L.png"
 
                     }else if(stringToArray[i] === "M"){
-                        console.log("M");
+                        image.src = "images/M.png"
 
                     }else if(stringToArray[i] === "N"){
-                        console.log("N");
+                        image.src = "images/N.png"
 
                     }else if(stringToArray[i] === "O"){
-                        console.log("O");
-
-                    }else if(stringToArray[i] === "B"){
-                        console.log("B");
+                        image.src = "images/O.png"
 
                     }else if(stringToArray[i] === "P"){
-                        console.log("P");
+                        image.src = "images/P.png"
 
                     }else if(stringToArray[i] === "Q"){
-                        console.log("Q");
+                        image.src = "images/Q.png"
 
                     }else if(stringToArray[i] === "R"){
-                        console.log("R");
+                        image.src = "images/R.png"
 
                     }else if(stringToArray[i] === "S"){
-                        console.log("S");
+                        image.src = "images/S.png"
 
                     }else if(stringToArray[i] === "T"){
-                        console.log("T");
+                        image.src = "images/T.png"
 
                     }else if(stringToArray[i] === "U"){
-                        console.log("U");
+                        image.src = "images/U.png"
 
                     }else if(stringToArray[i] === "V"){
-                        console.log("V");
+                        image.src = "images/V.png"
 
                     }else if(stringToArray[i] === "W"){
-                        console.log("W");
+                        image.src = "images/W.png"
 
                     }else if(stringToArray[i] === "X"){
-                        console.log("X");
+                        image.src = "images/X.png"
 
                     }else if(stringToArray[i] === "Y"){
-                        console.log("Y");
+                        image.src = "images/Y.png"
 
                     }else if(stringToArray[i] === "Z"){
-                        console.log("Z");
+                        image.src = "images/Z.png"
 
                     }else if(stringToArray[i] === "0"){
-                        console.log("0");
+                        image.src = "images/0.png"
 
                     }else if(stringToArray[i] === "1"){
-                        console.log("1");
+                        image.src = "images/1.png"
 
                     }else if(stringToArray[i] === "2"){
-                        console.log("2");
+                        image.src = "images/2.png"
 
                     }else if(stringToArray[i] === "3"){
-                        console.log("3");
+                        image.src = "images/3.png"
 
                     }else if(stringToArray[i] === "4"){
-                        console.log("4");
+                        image.src = "images/4.png"
 
                     }else if(stringToArray[i] === "5"){
-                        console.log("5");
+                        image.src = "images/5.png"
 
                     }else if(stringToArray[i] === "6"){
-                        console.log("6");
+                        image.src = "images/6.png"
 
                     }else if(stringToArray[i] === "7"){
-                        console.log("7");
+                        image.src = "images/7.png"
 
                     }else if(stringToArray[i] === "8"){
-                        console.log("8");
+                        image.src = "images/8.png"
 
                     }else if(stringToArray[i] === "9"){
-                        console.log("9");
+                        image.src = "images/9.png"
+
+                    }else if(stringToArray[i] === "." || "!" || "?"){
+                        image.src = "images/end.png"
+
+                    }else if(stringToArray[i] === " "){
+                        `<span class="space-separator"></span>`
 
                     }
                 }else{
@@ -180,7 +185,8 @@
             
             //TODO: Write HTML output to #ransom-note
             let html = document.getElementById("ransom-note")
-            html.innerHTML = stringToArray + userRansom
+            html.innerHTML = userRansom
+            console.log(stringToArray);
             
         }
     </script>
