@@ -26,6 +26,7 @@
 
         /*Lager en event Listener som sjekker om knappen med id ransome-note blir trykket ned, så skal funksjonen makeRansom kjøre*/
         //document.getElementById("test").addEventListener("click", makeRansom)
+        
         //Create function to run on button click
         function makeRansom() {
             //TODO: Fetch text from textarea
@@ -55,29 +56,27 @@
             stringToArray.map(
                 (test) => { userRansom + `${test}`}
             )
-            console.log(stringToArray);
 
+            /*https://stackoverflow.com/questions/35606319/need-to-output-image-depending-on-what-letter-is-typed-into-input-box-in-javascr*/
             for (let i = 0; i < stringToArray.length; i++){
+                let img = document.createElement("img");
+                let src = document.createAttribute("src");
                 if(allowedCharactersArray.indexOf(stringToArray[i]) > -1){
-                    console.log("ja");
+                    if(stringToArray[i] === "A"){
+                        console.log("A");
+                    }else if(stringToArray[i] === "B"){
+                        console.log("B");
+                    }
                 }else{
                     console.log("nei");
                 }
             }
-            /*
-            for (let i = 0; i < stringToArray.length; i++) {
-                let letter = stringToArray.charAt(i);
-                let img = document.createElement("img");
-                let att = document.createAttribute("src");
-                att.value =  "cat_"+letter+".jpg";
-                img.setAttributeNode(att);
-                document.body.appendChild(img);
-            }
-            */
+
 
             
             //TODO: Write HTML output to #ransom-note
-            document.getElementById("ransom-note").innerHTML = userRansom
+            let html = document.getElementById("ransom-note")
+            html.innerHTML = userRansom
             
         }
     </script>
