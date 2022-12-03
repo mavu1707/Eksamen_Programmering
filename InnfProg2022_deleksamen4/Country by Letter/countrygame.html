@@ -116,7 +116,8 @@
              * insert into guessed countries and add to list of guessed countries in interface
              * Update input field to be ready for new user guess
              */
-            
+            console.log("Enter");
+
         }
 
         //Function for printing the result:
@@ -129,6 +130,13 @@
         }
 
         //TODO: listen for Enter-key key-press. When found, check input-country.
+        /*https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp*/
+        let userInput = document.getElementById("userguess")
+        userInput.addEventListener("keypress", (event) =>{
+            if(event.key === "Enter"){
+                checkCountry()
+            }
+        })
         
 
         //Countdown functionality
