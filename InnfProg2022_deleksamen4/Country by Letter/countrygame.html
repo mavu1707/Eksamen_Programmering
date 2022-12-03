@@ -123,10 +123,15 @@
                 userCorrectGuesses += userGuess
                 console.log("Riktig");
                 console.log(userCorrectGuesses);
+                userCorrectGuesses.push("tull")
+                console.log(userCorrectGuess);
                 
                 
                 
                 document.getElementById("userCorrectList").innerHTML += `<li>${userCorrectGuesses}</li>`
+                
+                //Tømmer input elementet
+                document.getElementById("userguess").value = ""
             }
         }
 
