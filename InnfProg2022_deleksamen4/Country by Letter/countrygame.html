@@ -74,8 +74,11 @@
             document.getElementById("userInputArea").style.display = "block"
             document.getElementById("startgame").style.display = "none"
             document.getElementById("startmessage").style.display = "none"
+            document.getElementById("correct").innerHTML = 0
+            countInterval = 1
+
             //TODO: Set/Reset counter
-            counter = 90
+            counter = 10
             //TODO: Reset user guessed array
             let userCorrectGuesses = []
 
