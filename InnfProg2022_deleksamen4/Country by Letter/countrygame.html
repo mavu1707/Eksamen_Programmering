@@ -62,7 +62,7 @@
         //Prepare array to contain countries filtered by firstletter
         let countries = []
         //Prepare interval id
-        let countInterval
+        let countInterval = 1
 
         function randMinMax (min, max){
             return Math.floor(Math.random() * (max - min + 1) + min)
@@ -118,21 +118,23 @@
              */
             let userGuess = document.getElementById("userguess").value
             let test = document.getElementById("correct")
+            //countInterval = 0
 
             if(countries.includes(userGuess)){
                 userCorrectGuesses += userGuess
-                console.log("Riktig");
                 console.log(userCorrectGuesses);
-                userCorrectGuesses.push("tull")
-                console.log(userCorrectGuess);
                 
+
+                document.getElementById("userCorrectList").innerHTML += `<li>${userGuess}</li>`
+                document.getElementById("correct").innerHTML = `<span>${countInterval}</span>`
                 
-                
-                document.getElementById("userCorrectList").innerHTML += `<li>${userCorrectGuesses}</li>`
-                
+                console.log(userGuess);
+                console.log(countInterval);
                 //Tømmer input elementet
                 document.getElementById("userguess").value = ""
             }
+            countInterval++
+            console.log(countInterval);
         }
 
         //Function for printing the result:
@@ -141,6 +143,7 @@
              * Update interface with results.
              * Check if all countries are found. If so, replace input with message and stop countdown
              * */
+
             
         }
 
