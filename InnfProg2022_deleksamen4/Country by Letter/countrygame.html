@@ -73,7 +73,7 @@
             //SETS/RESETS:
             document.getElementById("userInputArea").style.display = "block"
             document.getElementById("startgame").style.display = "none"
-            document.getElementById("startmessage").style.display = "none"
+            document.getElementById("startmessage").style.display = "block"
 
             //TODO: Set/Reset counter
             counter = 90
@@ -131,8 +131,10 @@
                 //Tømmer input elementet
                 document.getElementById("userguess").value = ""
                 countInterval++
+
+                checkAndPrintResult()
             }
-            checkAndPrintResult()
+            
         }
 
         //Function for printing the result:
@@ -142,7 +144,9 @@
              * Check if all countries are found. If so, replace input with message and stop countdown
              * */
             if(userCorrectGuesses.length === countries.length){
-                counter = 0
+                document.getElementById("userInputArea").style.display = "none"
+                document.getElementById("startgame").style.display = "block"
+                document.getElementById("startmessage").innerHTML = `You managed to guess all the countries! Good job. Wanna try again?`
             }
             
         }
@@ -178,9 +182,7 @@
                 clearInterval(countdown)
                 gameover()
                 counter = 0
-                /*Teller fortsatt i bakgrunnen*/
             }
-
         }
         
 
