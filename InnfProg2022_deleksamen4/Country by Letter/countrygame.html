@@ -76,7 +76,8 @@
             document.getElementById("startmessage").style.display = "none"
 
             //TODO: Set/Reset counter
-            counter = 15
+            counter = 90
+        
 
             //TODO: Reset user guessed array
             userCorrectGuesses = []
@@ -120,7 +121,7 @@
             let userGuess = document.getElementById("userguess").value
             let test = document.getElementById("correct")
 
-            if(countries.includes(userGuess)){
+            if(countries.includes(userGuess) && !userCorrectGuesses.includes(userGuess)){
                 userCorrectGuesses.push(userGuess)
                 console.log(userCorrectGuesses);
                 
@@ -131,6 +132,7 @@
                 document.getElementById("userguess").value = ""
                 countInterval++
             }
+            checkAndPrintResult()
         }
 
         //Function for printing the result:
@@ -139,7 +141,9 @@
              * Update interface with results.
              * Check if all countries are found. If so, replace input with message and stop countdown
              * */
-
+            if(userCorrectGuesses.length === countries.length){
+                counter = 0
+            }
             
         }
 
