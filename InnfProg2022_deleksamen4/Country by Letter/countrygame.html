@@ -120,9 +120,14 @@
             let test = document.getElementById("correct")
 
             if(countries.includes(userGuess)){
+                userCorrectGuesses += userGuess
+                console.log("Riktig");
+                console.log(userCorrectGuesses);
                 
+                
+                
+                document.getElementById("userCorrectList").innerHTML += `<li>${userCorrectGuesses}</li>`
             }
-
         }
 
         //Function for printing the result:
