@@ -99,10 +99,11 @@
 
             //Filter
             //countries
+            countries = countryList.filter((countryCount) => countryCount[0] === randomLetter)
+            let count = countries.length
+            document.getElementById("countryAmount").innerHTML = count
             
-
-
-            console.log(randomLetter);
+            console.log(countries);
             
         }
         
@@ -140,9 +141,11 @@
             const timer = document.getElementById("countdown")
             timer.innerHTML = counter
             counter--
-            if(counter < 45 && counter > 20){
+            if(counter < 90 && counter > 45){
+                timer.style.color = "green"
+            }else if(counter < 45 && counter > 20){
                 timer.style.color = "orange"
-            }else if(counter < 20 && counter === 0){
+            }else if(counter < 20 && counter > 0){
                 timer.style.color = "red"
             }else if(counter < 0){
                 clearInterval(countdown)
