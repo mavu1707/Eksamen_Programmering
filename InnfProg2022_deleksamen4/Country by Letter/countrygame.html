@@ -74,21 +74,21 @@
             document.getElementById("userInputArea").style.display = "block"
             document.getElementById("startgame").style.display = "none"
             document.getElementById("startmessage").style.display = "none"
-            document.getElementById("correct").innerHTML = 0
-            document.getElementById("userCorrectList").innerHTML = ""
-            countInterval = 1
 
             //TODO: Set/Reset counter
-            counter = 10
+            counter = 15
+
             //TODO: Reset user guessed array
-            let userCorrectGuesses = []
+            userCorrectGuesses = []
 
             /* TODO: 
              * INTERFACE UPDATES
              * Reset display list of guessed countries, game message, results and countdown timer
              * Hide startbutton and show the inputfield, set inputfield focus
              */
-            
+            countInterval = 1
+            document.getElementById("correct").innerHTML = 0
+            document.getElementById("userCorrectList").innerHTML = ""
             
             /* TODO:
              * SINGLE GAME DEPENDENCIES
@@ -97,18 +97,14 @@
              * Print total countries to info and result display in interface
              * Start the timer
              */
-            /*https://lms.webtricks.blog/kurs/innforing-i-programmering/10-canvas-animasjon/randomisering-tilfeldig-utvalg-verdi*/
             const randomLetter = firstLetters[Math.floor(Math.random()*firstLetters.length)]
             document.getElementById("chosenLetter").innerHTML = randomLetter
 
-            //Filter
-            //countries
             countries = countryList.filter((countryCount) => countryCount[0] === randomLetter)
             let count = countries.length
             document.getElementById("countryAmount").innerHTML = count
             
             console.log(countries);
-            
         }
         
 
@@ -122,10 +118,9 @@
              */
             let userGuess = document.getElementById("userguess").value
             let test = document.getElementById("correct")
-            //countInterval = 0
 
             if(countries.includes(userGuess)){
-                userCorrectGuesses += userGuess
+                userCorrectGuesses.push(userGuess)
                 console.log(userCorrectGuesses);
                 
                 document.getElementById("userCorrectList").innerHTML += `<li>${userGuess}</li>`
