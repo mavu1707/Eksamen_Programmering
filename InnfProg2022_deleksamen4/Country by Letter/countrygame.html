@@ -64,6 +64,10 @@
         //Prepare interval id
         let countInterval
 
+        function randMinMax (min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
         //Function to start a game
         function newGame() {
             //SETS/RESETS:
@@ -89,6 +93,16 @@
              * Print total countries to info and result display in interface
              * Start the timer
              */
+            /*https://lms.webtricks.blog/kurs/innforing-i-programmering/10-canvas-animasjon/randomisering-tilfeldig-utvalg-verdi*/
+            const randomLetter = firstLetters[Math.floor(Math.random()*firstLetters.length)]
+            document.getElementById("chosenLetter").innerHTML = randomLetter
+
+            //Filter
+            //countries
+            
+
+
+            console.log(randomLetter);
             
         }
         
