@@ -124,17 +124,13 @@
                 userCorrectGuesses += userGuess
                 console.log(userCorrectGuesses);
                 
-
                 document.getElementById("userCorrectList").innerHTML += `<li>${userGuess}</li>`
                 document.getElementById("correct").innerHTML = `<span>${countInterval}</span>`
                 
-                console.log(userGuess);
-                console.log(countInterval);
                 //Tømmer input elementet
                 document.getElementById("userguess").value = ""
+                countInterval++
             }
-            countInterval++
-            console.log(countInterval);
         }
 
         //Function for printing the result:
