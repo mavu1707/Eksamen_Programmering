@@ -274,17 +274,14 @@
         //TODO: Timer for how long the fish is alive
         function counter() {
             //TODO: Count up
-            let countHtml = ocument.getElementById("count")
-            let count = game.counter
-            countHtml.innerHTML = count
-            count++
-
+            game.counter++
+            console.log(game.counter);
             //TODO: Print count
-            
+            document.getElementById("count").innerHTML = game.counter
         }
         //TODO: code necessary for counting second intervals
-       setInterval(counter, 1000)
-       console.log(counter);
+        setInterval(counter, 1000)
+
 
         //Animation function to draw elements
         function drawElements() {
