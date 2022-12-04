@@ -274,12 +274,17 @@
         //TODO: Timer for how long the fish is alive
         function counter() {
             //TODO: Count up
-           
+            let countHtml = ocument.getElementById("count")
+            let count = game.counter
+            countHtml.innerHTML = count
+            count++
+
             //TODO: Print count
             
         }
         //TODO: code necessary for counting second intervals
-        
+       setInterval(counter, 1000)
+       console.log(counter);
 
         //Animation function to draw elements
         function drawElements() {
@@ -306,7 +311,7 @@
                 //TODO: Prevent food from exiting canvas:
                 
                 
-                //Check if food collides with fish ("is given to")
+                /*Check if food collides with fish ("is given to")
                 if(
                     //TODO: Collision check conditions    
                 
@@ -318,7 +323,7 @@
                     //TODO: Update hungerlevel
                     
                     //document.getElementById("hunger-bar").innerHTML = game.hungerLevel
-                }
+                }*/
 
                 //Update levels in UI
                 updateStatusBars()
