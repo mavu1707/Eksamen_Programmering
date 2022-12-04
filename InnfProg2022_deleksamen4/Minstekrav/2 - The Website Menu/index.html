@@ -35,10 +35,6 @@
             ]}
         ]
 
-        //Lagre knapp- og meny-element for bruk i koden:
-        const menu = document.getElementById("menu")
-        const button = document.getElementById("toggleMenu")
-
         /* TODO:
          * Funksjon for å åpne/lukke meny:
          * Hvis #menu inneholder klassen .active: 
@@ -53,25 +49,27 @@
 
             if(menu.classList.contains('active')){
                 menu.classList.remove('active')
+                document.getElementById("toggleMenu").innerHTML = "Menu" + `<img src="menuicon.png"/>`
                 console.log("uten");
 
             }else{
                 menu.classList.add('active')
+                document.getElementById("toggleMenu").innerHTML = "Close" + `<img src="closeicon.png"/>`
                 console.log("med");
             }
          }
 
         //Variabel for meny-HTML
         //TODO: Skal ikke starte som en tom streng, må inneholde et punkt for å møte oppgaveteksten...
-        let menuHTML = ``
-
+        let menuHTML = ""
+        let test = document.getElementById("menu")
         //Gå gjennom første nivå av menupoints-array
         menuPoints.map(category => {
             //TODO: Forbered HTML med overskrift og listestart
-            
+            menu.innerHTML += `<ul>${menuPoints[0].menuheader}</ul>`
             //TODO: Gå gjennom array på andre nivå (menulinks)
             //TODO: For hver menulink: fyll menuHTML med listeelementer og link
-            
+
             //TODO: Avslutt liste
             
         })
