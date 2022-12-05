@@ -250,17 +250,17 @@
         function hungerLevelCounter() {
             game.hungerLevel--
             updateStatusBars()
-        }setInterval(hungerLevelCounter, randMinMax(2000, 17000))
+        }
 
         function dirtLevelCounter() {
             game.dirtLevel--
             updateStatusBars()
-        }setInterval(dirtLevelCounter, randMinMax(3000, 8000))
+        }
 
         function waterLevelCounter() {
             game.waterLevel--
             updateStatusBars()
-        }setInterval(waterLevelCounter, randMinMax(2000, 12000))
+        }
 
         //Function to update status bars:
         function updateStatusBars() {
@@ -284,9 +284,12 @@
             //console.log(game.counter);
             //TODO: Print count
             document.getElementById("count").innerHTML = game.counter
-        }
+        }setInterval(counter, 1000)
+
         //TODO: code necessary for counting second intervals
-        setInterval(counter, 1000)
+        setInterval(hungerLevelCounter, randMinMax(2000, 17000))
+        setInterval(dirtLevelCounter, randMinMax(3000, 8000))
+        setInterval(waterLevelCounter, randMinMax(2000, 12000))
 
 
         //Animation function to draw elements
@@ -296,7 +299,7 @@
                 //Set waterlevel image
                 game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
                 //TODO: print background image
-                
+
 
                 //TODO: Set fish image based on level (use compareLeves-function to construct filename)
                 
@@ -332,9 +335,7 @@
                 updateStatusBars()
 
                 //TODO: Check if all levels reaches minimum (1) = game over = inPlay = false
-                if(game.hungerLevel == 3){
-                    console.log("hewhewh");
-                }
+
             } else {
                 //TODO: Clear the board, print game over, and show fish_level1.png
                 
