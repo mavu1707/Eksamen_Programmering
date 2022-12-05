@@ -249,23 +249,16 @@
         //TODO: Timers to manipulate dirt, hunger and waterlevel:
         function hungerLevelCounter() {
             game.hungerLevel--
-            document.getElementById("hunger-bar-fill").innerHTML = game.hungerLevel
-            console.log(game.hungerLevel);
             updateStatusBars()
         }setInterval(hungerLevelCounter, randMinMax(2000, 17000))
 
-
         function dirtLevelCounter() {
             game.dirtLevel--
-            document.getElementById("filth-bar-fill").innerHTML = game.dirtLevel
-            console.log(game.dirtLevel);
             updateStatusBars()
         }setInterval(dirtLevelCounter, randMinMax(3000, 8000))
 
         function waterLevelCounter() {
             game.waterLevel--
-            document.getElementById("water-bar-fill").innerHTML = game.waterLevel
-            console.log(game.waterLevel);
             updateStatusBars()
         }setInterval(waterLevelCounter, randMinMax(2000, 12000))
 
@@ -339,7 +332,9 @@
                 updateStatusBars()
 
                 //TODO: Check if all levels reaches minimum (1) = game over = inPlay = false
-                
+                console.log(game.hungerLevel, "hunger");
+                console.log(game.dirtLevel, "dirt");
+                console.log(game.waterLevel, "water");
             } else {
                 //TODO: Clear the board, print game over, and show fish_level1.png
                 
