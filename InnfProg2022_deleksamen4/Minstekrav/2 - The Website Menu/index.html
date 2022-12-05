@@ -71,12 +71,10 @@
             //TODO: Gå gjennom array på andre nivå (menulinks)
             category.menulinks.map(menulink => {
                 console.log(menulink.url);
-                menuHTML.innerHTML += `<li><a href="${menulink.url}"></a>${menulink.menutext}</li>`
+                menuHTML.innerHTML += `<li><a href="${menulink.url}">${menulink.menutext}</a></li>`
             })
             //TODO: Avslutt liste
         })
-
-        //TODO: Skriv ut HTML til <nav>:
         
     </script>
 </body>
