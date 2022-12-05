@@ -69,11 +69,11 @@
             menuHTML.innerHTML += `<ul>${category.menuheader}</ul>`
             
             //TODO: Gå gjennom array på andre nivå (menulinks)
-            //TODO: For hver menulink: fyll menuHTML med listeelementer og link
-            menuHTML.innerHTML += `<li><a href="${category.menulinks[0].url}">W3Schools</a>dhjdhh</li>`
+            category.menulinks.map(menulink => {
+                console.log(menulink.url);
+                menuHTML.innerHTML += `<li><a href="${menulink.url}"></a>${menulink.menutext}</li>`
+            })
             //TODO: Avslutt liste
-            console.log(category.menulinks[0].url);
-            
         })
 
         //TODO: Skriv ut HTML til <nav>:
