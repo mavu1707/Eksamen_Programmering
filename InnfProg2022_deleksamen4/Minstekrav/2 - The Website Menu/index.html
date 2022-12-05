@@ -14,6 +14,7 @@
         <nav id="menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="https://www.w3schools.com/js/default.asp">W3Schools</a></li>
             </ul>
         </nav>
     </header>
@@ -34,7 +35,6 @@
                 {url: "https://css-tricks.com/", menutext: "CSS Tricks"},
             ]}
         ]
-
         /* TODO:
          * Funksjon for å åpne/lukke meny:
          * Hvis #menu inneholder klassen .active: 
@@ -61,16 +61,18 @@
 
         //Variabel for meny-HTML
         //TODO: Skal ikke starte som en tom streng, må inneholde et punkt for å møte oppgaveteksten...
-        let menuHTML = ""
-        let test = document.getElementById("menu")
+        let menuHTML = document.getElementById("menu")
+        let test = ""
         //Gå gjennom første nivå av menupoints-array
         menuPoints.map(category => {
             //TODO: Forbered HTML med overskrift og listestart
-            menu.innerHTML += `<ul>${menuPoints[0].menuheader}</ul>`
+            menuHTML.innerHTML += `<ul>${category.menuheader}</ul>`
+            
             //TODO: Gå gjennom array på andre nivå (menulinks)
             //TODO: For hver menulink: fyll menuHTML med listeelementer og link
-
+            menuHTML.innerHTML += `<li><a href="${category.menulinks[0].url}">W3Schools</a>dhjdhh</li>`
             //TODO: Avslutt liste
+            console.log(category.menulinks[0].url);
             
         })
 

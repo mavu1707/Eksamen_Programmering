@@ -291,7 +291,6 @@
         setInterval(dirtLevelCounter, randMinMax(3000, 8000))
         setInterval(waterLevelCounter, randMinMax(2000, 12000))
 
-
         //Animation function to draw elements
         function drawElements() {
             if(game.inPlay) {
@@ -299,7 +298,7 @@
                 //Set waterlevel image
                 game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
                 //TODO: print background image
-
+   
 
                 //TODO: Set fish image based on level (use compareLeves-function to construct filename)
                 
