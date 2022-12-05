@@ -281,7 +281,7 @@
         function counter() {
             //TODO: Count up
             game.counter++
-            //console.log(game.counter);
+
             //TODO: Print count
             document.getElementById("count").innerHTML = game.counter
         }setInterval(counter, 1000)
@@ -297,8 +297,9 @@
                 //Everything that happens when we're ingame
                 //Set waterlevel image
                 game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
+
                 //TODO: print background image
-   
+                
 
                 //TODO: Set fish image based on level (use compareLeves-function to construct filename)
                 
@@ -334,13 +335,18 @@
                 updateStatusBars()
 
                 //TODO: Check if all levels reaches minimum (1) = game over = inPlay = false
+                //console.log(game.waterLevel, game.dirtLevel, game.hungerLevel);
+                if(game.waterLevel == 2){
+                    console.log("hhhee");
+                }
+                
 
             } else {
                 //TODO: Clear the board, print game over, and show fish_level1.png
                 
             }
             //TODO: rerun animation function
-            
+            requestAnimationFrame(drawElements)
         }
 
         //Function to start game
