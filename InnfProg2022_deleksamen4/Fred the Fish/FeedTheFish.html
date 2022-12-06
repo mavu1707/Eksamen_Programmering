@@ -198,7 +198,8 @@
         //Function to draw food
         function addFood(x,y) {
             //TODO: draw Food-can image
-            ctx.drawImage(foodImage, x = food.x, y = food.y)
+            ctx.drawImage(foodImage, 0, 0)
+
             foodReady = true
         }
         
@@ -317,9 +318,9 @@
         }setInterval(counter, 1000)
 
         //TODO: code necessary for counting second intervals
-        setInterval(hungerLevelCounter, randMinMax(999, 1000))//2000, 17000
-        setInterval(dirtLevelCounter, randMinMax(999, 1000))//3000, 8000
-        setInterval(waterLevelCounter, randMinMax(999, 1000))//1000, 12000
+        setInterval(hungerLevelCounter, randMinMax(2000, 17000))//2000, 17000
+        setInterval(dirtLevelCounter, randMinMax(3000, 8000))//3000, 8000
+        setInterval(waterLevelCounter, randMinMax(1000, 12000))//1000, 12000
 
         //Animation function to draw elements
         function drawElements() {
@@ -332,7 +333,7 @@
                 image.src = game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
                 
                 //TODO: print background image
-                //ctx.drawImage(image, 0, 0)
+                ctx.drawImage(image, 0, 0)
                 
                 //TODO: Set fish image based on level (use compareLeves-function to construct filename)
                 
@@ -372,11 +373,11 @@
 
                 //Update levels in UI
                 updateStatusBars()
-
+                /*
                 //TODO: Check if all levels reaches minimum (1) = game over = inPlay = false
                 if(game.waterLevel <= 1 && game.dirtLevel <= 1 && game.hungerLevel <= 1){
                     game.inPlay = false
-                }
+                }*/
                 
             } else {
                 //TODO: Clear the board, print game over, and show fish_level1.png
