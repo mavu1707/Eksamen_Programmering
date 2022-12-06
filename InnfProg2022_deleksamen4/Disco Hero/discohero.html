@@ -84,9 +84,11 @@
         for(let gameItemCount = 0; gameItemCount < gameConfig.items; gameItemCount++) {
             let type = allowedValues[Math.floor(Math.random() * allowedValues.length)]
             let randomX = canvas.width / 2
-            type === "ArrowUp" || type === "ArrowDown" ? randomX = Math.floor(Math.random() * (225 - 75 + 1) + 75) : null
+            type === "ArrowUp" || type === "ArrowDown" ? randomX = Math.floor(Math.random() * (225 - 75
+             + 1) + 75) : null
             type === "ArrowLeft" ? randomX = Math.floor(Math.random() * (100 - 0 + 1) + 0) : null
-            type === "ArrowRight" ? randomX = Math.floor(Math.random() * ((canvas.width - 40) - 200 + 1) + 200) : null
+            type === "ArrowRight" ? randomX = Math.floor(Math.random() * ((canvas.width - 40) - 200 + 1)
+             + 200) : null
             gameItems.push({
                 x: randomX,
                 y: canvas.height - 40,
@@ -115,7 +117,8 @@
              */
             
             //Lag tilfeldig tid basert på nivåets min- og max-verdi
-            var randomTime = Math.floor(Math.random() * (gameConfig.max - gameConfig.min + 1) + gameConfig.min)
+            var randomTime = Math.floor(Math.random() * (gameConfig.max - gameConfig.min + 1) + 
+            gameConfig.min)
             
             /* TODO: 
              * Sjekk at gameItemsCounter ikke overstiger antall elementer som skal tegnes.
@@ -127,13 +130,25 @@
             
         }
 
+        let up = false
+        let down = false
+        let right = false
+        let left = false
+
         //TODO: Sett activeKey til riktig type-verdi når piltast trykkes ned
         document.addEventListener("keydown", event => {
-            
+            if(event.key === "ArrowRight") {right = true, console.log("Høyre");}
+            if(event.key === "ArrowLeft") {left = true, console.log("Venstre");}  
+            if(event.key === "ArrowUp") {up = true, console.log("Opp");}
+            if(event.key === "ArrowDown") {down = true, console.log("Ned");} 
         })
+
         //TODO: Tøm verdien i activeKey når piltast slippes opp 
         document.addEventListener("keyup", event => {
-            
+            if(event.key === "ArrowRight") {right = false}
+            if(event.key === "ArrowLeft") {left = false} 
+            if(event.key === "ArrowUp") {up = false} 
+            if(event.key === "ArrowDown") {down = false} 
         })
 
         //Funksjon for å oppdatere UI-grensesnitt
@@ -143,8 +158,14 @@
             const hits = document.getElementById("hits")
             const misses = document.getElementById("misses")
             const level = document.getElementById("level")
+
             //TODO: Fyll alle HTML-elementene (ref. deklarasjoner over) med riktige verdier
-            
+            itemsToPlay.innerHTML = gameConfig.items
+            itemsDrawn.innerHTML = gameItemsCounter
+            hits.innerHTML = gameConfig.hits
+            misses.innerHTML = gameConfig.lives
+            level.innerHTML = gameConfig.level
+
             //TODO: Fargeendringer for level (se Forutsetninger.pdf)
             
             //TODO: Fargeendringer for liv (se Forusetninger.pdf)
@@ -154,12 +175,13 @@
         //Funksjon for å tegne elementer i canvas
         function drawElements() {
             //TODO: Tøm canvas for hver ny frame som tegnes
-            
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
 
             //Aktivt område hvor brukerne må trykke piltast matchende item:
             ctx.beginPath()
             ctx.fillStyle = gameConfig.activeArea.c
-            ctx.fillRect(gameConfig.activeArea.x, gameConfig.activeArea.y, gameConfig.activeArea.w, gameConfig.activeArea.h)
+            ctx.fillRect(gameConfig.activeArea.x, gameConfig.activeArea.y, gameConfig.activeArea.w,
+            gameConfig.activeArea.h)
             ctx.fillStyle = "#555"
             ctx.font = "16px Fira Sans"
             ctx.fillText("Klikk riktig piltast når firkantene", 10, 75)
