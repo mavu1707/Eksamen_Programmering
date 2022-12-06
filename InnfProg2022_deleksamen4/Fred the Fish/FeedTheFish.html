@@ -321,7 +321,21 @@
                 game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
                 
                 //TODO: print background image
+                /*https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage*/
+                const canvas = document.getElementById("fishtank")
+                const image = new Image(600, 600)
+                image.onload = drawImageActualSize
 
+                image.src = "img/background_level5.jpg"
+
+                function drawImageActualSize(){
+                    canvas.width = this.naturalWidth
+                    canvas.height = this.naturalHeight
+
+                    ctx.drawImage(this, 0, 0)
+
+                    ctx.drawImage(this, 0, 0, this.width, this.height)
+                }
 
 
                 //TODO: Set fish image based on level (use compareLeves-function to construct filename)
