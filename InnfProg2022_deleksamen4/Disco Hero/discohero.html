@@ -58,7 +58,7 @@
             activeKey: "",
             min: 500,
             max: 3500,
-            level: 4,
+            level: 1,
             activeArea: {
                 x: 0,
                 y: 50,
@@ -168,15 +168,22 @@
             level.innerHTML = gameConfig.level
 
             //TODO: Fargeendringer for level (se Forutsetninger.pdf)
-            if(gameConfig.level === 3 && gameConfig.level <= 4){
-                document.getElementById("level").style.color = "orange"
-                document.getElementById("level").style.borderColor = "orange"
+            if(gameConfig.level >= 3 && gameConfig.level <= 4){
+                level.style.color = "orange"
+                level.style.borderColor = "orange"
             }
             if(gameConfig.level === 4){
-                document.getElementById("level").style.color = "red"
-                document.getElementById("level").style.borderColor = "red"
+                level.style.color = "red"
+                level.style.borderColor = "red"
             }
-            //if(gameConfig.lives = )
+            if(gameConfig.lives <= 5 && gameConfig.lives >= 3){
+                misses.style.color = "orange"
+                misses.style.borderColor = "orange"
+            }
+            if(gameConfig.lives < 3){
+                misses.style.color = "red"
+                misses.style.borderColor = "red"
+            }
             
             
             
