@@ -103,7 +103,9 @@
         let gameItemsCounter = 0
 
         //Array med elementer som skal tegnes i spillbrettet.
-        let drawItems = []
+        let drawItems = [
+            //Lage alle firkantene
+        ]
 
         /*
          * Funksjon for å tilfeldig sette spill-elementer inn i tegne-array (drawItems)
@@ -176,6 +178,8 @@
                 level.style.color = "red"
                 level.style.borderColor = "red"
             }
+
+            //TODO: Fargeendringer for liv (se Forusetninger.pdf)
             if(gameConfig.lives <= 5 && gameConfig.lives >= 3){
                 misses.style.color = "orange"
                 misses.style.borderColor = "orange"
@@ -184,11 +188,6 @@
                 misses.style.color = "red"
                 misses.style.borderColor = "red"
             }
-            
-            
-            
-
-            //TODO: Fargeendringer for liv (se Forusetninger.pdf)
             
         }
 
