@@ -205,7 +205,8 @@
             //TODO: Clicking F should lead to a food being placed randomly on the upper part of the canvas
             //through the foodActive-state
             if(event.key === "f"){
-                console.log("Food");
+                addFood(randMinMax(10 , 20), randMinMax(20, 30))
+                console.log(addFood());
             }
 
             //TODO: Moving food cans with arrow keys:
@@ -317,27 +318,14 @@
             if(game.inPlay) {
                 //Everything that happens when we're ingame
                 //Set waterlevel image
-                game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
+                /*https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage*/
+                const image = new Image()
+
+                image.src = game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
                 
                 //TODO: print background image
-                /*https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage*/
-                const canvas = document.getElementById("fishtank")
-                const image = new Image()
-                //image.onload = drawImageActualSize
-
-                image.src = "img/background_level5.jpg"
                 ctx.drawImage(image, 0, 0)
-                /*
-                function drawImageActualSize(){
-                    canvas.width = this.naturalWidth
-                    canvas.height = this.naturalHeight
-
-                    ctx.drawImage(this, 0, 0)
-
-                    ctx.drawImage(this, 0, 0, this.width, this.height)
-                }*/
-
-
+                
                 //TODO: Set fish image based on level (use compareLeves-function to construct filename)
                 
                 //TODO: Set fish Y-position based on waterLevel
