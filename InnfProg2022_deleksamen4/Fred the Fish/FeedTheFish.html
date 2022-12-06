@@ -148,7 +148,7 @@
             fishY: 300,
             foodWidth: 40,
             foodHeight: 60,
-            waterLevel: 5,
+            waterLevel: 6,
             dirtLevel: 11,
             hungerLevel: 6,
             inPlay: true,
@@ -189,16 +189,17 @@
         
         //TODO: Prepare food variables
         const food = {
-           speed: 1, //Random mellom 1-5
-           x: 2, //renadomisert, men innefor canvas elementet
-           y: 3 //randomisert, men y
-
+           speed: randMinMax(1, 5), //Random mellom 1-5
+           x: randMinMax((600 - foodImage.width), (0 + foodImage.width)),
+           y: foodImage.height/2 //randomisert, men y/height of matboks
         }
         
+
         //Function to draw food
         function addFood(x,y) {
             //TODO: draw Food-can image
-            
+            ctx.drawImage(foodImage, food.x, food.y)
+            console.log(addFood);
         }
         
         /*****************************************************************
@@ -208,8 +209,7 @@
             //TODO: Clicking F should lead to a food being placed randomly on the upper part of the canvas
             //through the foodActive-state
             if(event.key === "f"){
-                addFood(randMinMax(10 , 20), randMinMax(20, 30))
-                console.log(addFood());
+                addFood()
             }
 
             //TODO: Moving food cans with arrow keys:
@@ -312,9 +312,9 @@
         }setInterval(counter, 1000)
 
         //TODO: code necessary for counting second intervals
-        setInterval(hungerLevelCounter, randMinMax(2000, 17000))
-        setInterval(dirtLevelCounter, randMinMax(3000, 8000))
-        setInterval(waterLevelCounter, randMinMax(2000, 12000))
+        setInterval(hungerLevelCounter, randMinMax(999, 1000))//2000, 17000
+        setInterval(dirtLevelCounter, randMinMax(999, 1000))//3000, 8000
+        setInterval(waterLevelCounter, randMinMax(999, 1000))//1000, 12000
 
         //Animation function to draw elements
         function drawElements() {
@@ -363,16 +363,13 @@
                 updateStatusBars()
 
                 //TODO: Check if all levels reaches minimum (1) = game over = inPlay = false
-                //console.log(game.waterLevel, game.dirtLevel, game.hungerLevel);
                 if(game.waterLevel <= 1 && game.dirtLevel <= 1 && game.hungerLevel <= 1){
                     game.inPlay = false
-                    console.log("død");
                 }
                 
-
             } else {
                 //TODO: Clear the board, print game over, and show fish_level1.png
-                //ctx.clearCanvas
+                
             }
             //TODO: rerun animation function
             requestAnimationFrame(drawElements)
