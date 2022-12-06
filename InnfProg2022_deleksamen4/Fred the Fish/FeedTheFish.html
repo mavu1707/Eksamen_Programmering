@@ -336,14 +336,14 @@
 
                 //TODO: Check if all levels reaches minimum (1) = game over = inPlay = false
                 //console.log(game.waterLevel, game.dirtLevel, game.hungerLevel);
-                if(game.waterLevel == 2){
-                    console.log("hhhee");
+                if(game.waterLevel <= 1 && game.dirtLevel <= 1 && game.hungerLevel <= 1){
+                    game.inPlay = false
                 }
                 
 
             } else {
                 //TODO: Clear the board, print game over, and show fish_level1.png
-                
+                //ctx.clearCanvas
             }
             //TODO: rerun animation function
             requestAnimationFrame(drawElements)
