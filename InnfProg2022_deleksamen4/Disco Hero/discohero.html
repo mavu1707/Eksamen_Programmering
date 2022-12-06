@@ -58,7 +58,7 @@
             activeKey: "",
             min: 500,
             max: 3500,
-            level: 1,
+            level: 4,
             activeArea: {
                 x: 0,
                 y: 50,
@@ -101,6 +101,7 @@
 
         //gameItemsCounter: hvor mange elementer er tegnet?
         let gameItemsCounter = 0
+
         //Array med elementer som skal tegnes i spillbrettet.
         let drawItems = []
 
@@ -167,7 +168,19 @@
             level.innerHTML = gameConfig.level
 
             //TODO: Fargeendringer for level (se Forutsetninger.pdf)
+            if(gameConfig.level === 3 && gameConfig.level <= 4){
+                document.getElementById("level").style.color = "orange"
+                document.getElementById("level").style.borderColor = "orange"
+            }
+            if(gameConfig.level === 4){
+                document.getElementById("level").style.color = "red"
+                document.getElementById("level").style.borderColor = "red"
+            }
+            //if(gameConfig.lives = )
             
+            
+            
+
             //TODO: Fargeendringer for liv (se Forusetninger.pdf)
             
         }
