@@ -148,7 +148,7 @@
             fishY: 300,
             foodWidth: 40,
             foodHeight: 60,
-            waterLevel: 6,
+            waterLevel: 5,
             dirtLevel: 11,
             hungerLevel: 6,
             inPlay: true,
@@ -249,17 +249,14 @@
         //TODO: Timers to manipulate dirt, hunger and waterlevel:
         function hungerLevelCounter() {
             game.hungerLevel--
-            updateStatusBars()
         }
 
         function dirtLevelCounter() {
             game.dirtLevel--
-            updateStatusBars()
         }
 
         function waterLevelCounter() {
             game.waterLevel--
-            updateStatusBars()
         }
 
         //Function to update status bars:
@@ -299,7 +296,8 @@
                 game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
 
                 //TODO: print background image
-                
+                let img = `<img src="img/background_level5.jpg"/>`
+                ctx.drawImage(img, 10, 10)
 
                 //TODO: Set fish image based on level (use compareLeves-function to construct filename)
                 
