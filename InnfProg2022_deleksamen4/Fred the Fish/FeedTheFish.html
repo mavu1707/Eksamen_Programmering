@@ -204,16 +204,25 @@
         document.addEventListener("keydown", event => {
             //TODO: Clicking F should lead to a food being placed randomly on the upper part of the canvas
             //through the foodActive-state
-            
+            if(event.key === "f"){
+                console.log("Food");
+            }
 
             //TODO: Moving food cans with arrow keys:
             
 
             //TODO: Clicking W to add water
+            if(event.key === "w" && game.waterLevel < 5){
+                game.waterLevel++
+                console.log("Water");
+            }
             
 
-            //TODO: Clicking B to clean with brush
-            
+            //TODO: Clicking C to clean with brush
+            if(event.key === "c" && game.waterLevel < 6){
+                game.dirtLevel++
+                console.log("Dirt");
+            }
 
             //Testknapp
             if(event.key === "t") {
@@ -249,14 +258,29 @@
         //TODO: Timers to manipulate dirt, hunger and waterlevel:
         function hungerLevelCounter() {
             game.hungerLevel--
+
+            if(game.hungerLevel <= 0){
+                clearInterval(hungerLevelCounter)
+                game.hungerLevel = 0
+            }
         }
 
         function dirtLevelCounter() {
             game.dirtLevel--
+
+            if(game.dirtLevel <= 0){
+                clearInterval(dirtLevelCounter)
+                game.dirtLevel = 0
+            }
         }
 
         function waterLevelCounter() {
             game.waterLevel--
+
+            if(game.waterLevel <= 0){
+                clearInterval(waterLevelCounter)
+                game.waterLevel = 0
+            }
         }
 
         //Function to update status bars:
@@ -293,11 +317,12 @@
             if(game.inPlay) {
                 //Everything that happens when we're ingame
                 //Set waterlevel image
+                
                 game.waterLevel <= 0 && game.waterLevel >= 5 ? background.src = "img/background_level5.jpg" : background.src = "img/background_level" + game.waterLevel + ".jpg"
-
+                
                 //TODO: print background image
-                let img = `<img src="img/background_level5.jpg"/>`
-                ctx.drawImage(img, 10, 10)
+
+
 
                 //TODO: Set fish image based on level (use compareLeves-function to construct filename)
                 
@@ -336,6 +361,7 @@
                 //console.log(game.waterLevel, game.dirtLevel, game.hungerLevel);
                 if(game.waterLevel <= 1 && game.dirtLevel <= 1 && game.hungerLevel <= 1){
                     game.inPlay = false
+                    console.log("død");
                 }
                 
 
