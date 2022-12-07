@@ -74,6 +74,7 @@
          * å redde elementet.
          */
         const allowedValues = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"]
+
         /*
          * Forbered en array med spill-elementer. La en løkke gå like mange ganger som 
          * spillet skal ha elementer, og sett inn et element for hver runde løkken går.
@@ -81,6 +82,7 @@
          * array som brukes for å tegne elementer og der manipuleres. 
          */
         const gameItems = []
+
         for(let gameItemCount = 0; gameItemCount < gameConfig.items; gameItemCount++) {
             let type = allowedValues[Math.floor(Math.random() * allowedValues.length)]
             let randomX = canvas.width / 2
@@ -108,9 +110,9 @@
                 width: 40,
                 height: 40,
                 x: 10,
-                y: 500,
+                y: 200,
                 color: "deeppink"
-            },
+            }/*,
             rectDown = {
                 width: 40,
                 height: 40,
@@ -131,7 +133,7 @@
                 x: 240,
                 y: 500,
                 color: "darkorange"
-            }
+            }*/
         ]
 
         /*
@@ -266,12 +268,6 @@
                  * Kollisjon skjer når item er vertikalt innenfor aktivt område.
                  * Hvis kollisjon OG item er aktivt...
                  *
-                x: 0,
-                y: 50,
-                w: canvas.width,
-                h: 60,
-                c: "silver"
-            }
                  */
                 if(
                     //TODO: Skriv betingelse for kollisjon
@@ -282,17 +278,23 @@
                     //TODO: ...og knapp med riktig item-type trykkes...
                     console.log("Kan trykke");
                     //TODO: ...deaktiver element, oppdater hits og tilstander for hit og miss
-                        
-                    
                 } else {
                     //TODO: Resett tilstander for hit og miss
-
+                    gameConfig.hitActive = false
+                    gameConfig.missActive = false
                 }
                 /* TODO:
                  * Sjekk om et element er på utsiden toppen av canvas.
                  * Hvis et item går på utsiden canvas, teller det som en miss, og
                  * man mister et liv, samtidig som elementet må deaktiveres og miss-tilstand endres.
                  */
+                 if(
+                    item.y <= 10
+                 ){
+                    gameConfig.lives--
+                    gameConfig.missActive = true
+                    gameConfig.hitActive = false
+                 }
                 
             })
 
