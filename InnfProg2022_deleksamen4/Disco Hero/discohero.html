@@ -51,7 +51,7 @@
          */
         const gameConfig = {
             items: 150,
-            lives: 10,
+            lives: 0,
             hits: 0,
             hitActive: true,
             missActive: true,
@@ -142,11 +142,13 @@
             
         }
 
+        /*Tatt fra catch aliens*/
         let up = false
         let down = false
         let right = false
         let left = false
 
+        /*Tatt fra catch aliens*/
         //TODO: Sett activeKey til riktig type-verdi når piltast trykkes ned
         document.addEventListener("keydown", event => {
             if(event.key === "ArrowRight") {right = true, console.log("Høyre");}
@@ -155,6 +157,7 @@
             if(event.key === "ArrowDown") {down = true, console.log("Ned");} 
         })
 
+        /*Tatt fra catch aliens*/
         //TODO: Tøm verdien i activeKey når piltast slippes opp 
         document.addEventListener("keyup", event => {
             if(event.key === "ArrowRight") {right = false}
@@ -278,9 +281,12 @@
              * 3) Ellers skal vi bare fortsette å kjøre drawElements med requestAnimationFrame
              * for å fortsette spillet.
              */
-            if
-            
-            
+            if(gameConfig.gameover == true){
+                ctx.fillStyle = "red"
+                ctx.fillText("GAME OVER!", 110, 250)
+            }else{
+                requestAnimationFrame(drawElements)
+            }
         }
 
         //Start spillet
