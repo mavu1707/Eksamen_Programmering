@@ -108,9 +108,9 @@
                 width: 40,
                 height: 40,
                 x: 10,
-                y: 200,
+                y: 500,
                 color: "deeppink"
-            }/*,
+            },
             rectDown = {
                 width: 40,
                 height: 40,
@@ -131,7 +131,7 @@
                 x: 240,
                 y: 500,
                 color: "darkorange"
-            }*/
+            }
         ]
 
         /*
@@ -260,20 +260,28 @@
 
                 //TODO: Juster elementets verdi for vertikal bevegelse oppover
                 item.y = item.y - 1
-                //console.log(gameConfig.activeArea.h);
+
                 /*
                  * Kollisjonssjekk mellom item og aktivt område
                  * Kollisjon skjer når item er vertikalt innenfor aktivt område.
                  * Hvis kollisjon OG item er aktivt...
+                 *
+                x: 0,
+                y: 50,
+                w: canvas.width,
+                h: 60,
+                c: "silver"
+            }
                  */
                 if(
                     //TODO: Skriv betingelse for kollisjon
-                    item.x + item.height >= gameConfig.activeArea.y
+                    item.y + item.height >= gameConfig.activeArea.h &&
+                    item.y <= gameConfig.activeArea.y + gameConfig.activeArea.h
                     
                 ) {
                     //TODO: ...og knapp med riktig item-type trykkes...
-                    console.log("hheh");
-                        //TODO: ...deaktiver element, oppdater hits og tilstander for hit og miss
+                    console.log("Kan trykke");
+                    //TODO: ...deaktiver element, oppdater hits og tilstander for hit og miss
                         
                     
                 } else {
