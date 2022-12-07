@@ -206,6 +206,7 @@
         /*****************************************************************
          * BUTTON ASSIGNMENTS
          */
+        /*Tatt fra catch aliens*/
         let up = false
         let down = false
         let right = false
@@ -218,6 +219,7 @@
                 addFood()
             }
 
+            /*Tatt fra catch aliens*/
             //TODO: Moving food cans with arrow keys:
             if(event.key === "ArrowRight") {right = true}
             if(event.key === "ArrowLeft") {left = true}  
@@ -237,6 +239,7 @@
             }
         })
 
+        /*Tatt fra catch aliens*/
         document.addEventListener("keyup", event => {
             //TODO: Stop moving food when leaving keys
             if(event.key === "ArrowRight") {right = false}
@@ -348,6 +351,7 @@
                 }
                 
                 //TODO: Set up food movement
+                /*Tatt fra catch aliens*/
                 if(right = true) {food.x += food.x + 1}
                 if(left = true) {food.x -= food.x - 1}
                 if(up = true) {food.y -= food.y - 1}

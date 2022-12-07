@@ -51,7 +51,7 @@
          */
         const gameConfig = {
             items: 150,
-            lives: 0,
+            lives: 10,
             hits: 0,
             hitActive: true,
             missActive: true,
@@ -104,15 +104,33 @@
 
         //Array med elementer som skal tegnes i spillbrettet.
         let drawItems = [
-            rectSize = {
+            rectUp = {
                 width: 40,
-                height: 40
+                height: 40,
+                x: 20,
+                y: 400,
+                color: "deeppink"
             },
-            rectColor = {
-                arrowUp: "deeppink",
-                arrowDown: "darkolivegreen",
-                arrowLeft: "darkslateblue",
-                arrowRight: "darkorange"
+            rectDown = {
+                width: 40,
+                height: 40,
+                x: 150,
+                y: 400,
+                color: "darkolivegreen"
+            },
+            rectLeft = {
+                width: 40,
+                height: 40,
+                x: 200,
+                y: 400,
+                color: "darkslateblue"
+            },
+            rectRight = {
+                width: 40,
+                height: 40,
+                x: 240,
+                y: 400,
+                color: "darkorange"
             }
         ]
 
@@ -230,11 +248,14 @@
                  * elementets type.
                  * Se Forutsetninger.pdf, alternativt CSS for "Controls" i grensesnittet.
                  */
-                
+                ctx.beginPath()
+                ctx.fillStyle = item.color
+                ctx.fillRect(item.x, item.y, item.height, item.width)
+                ctx.closePath()
                 
 
                 //TODO: Juster elementets verdi for vertikal bevegelse oppover
-                
+                item.y = item.y - 1
 
                 /*
                  * Kollisjonssjekk mellom item og aktivt område
@@ -283,7 +304,8 @@
              */
             if(gameConfig.gameover == true){
                 ctx.fillStyle = "red"
-                ctx.fillText("GAME OVER!", 110, 250)
+                ctx.font = "40px arial"
+                ctx.fillText("GAME OVER!", 26, 250)
             }else{
                 requestAnimationFrame(drawElements)
             }
