@@ -112,28 +112,28 @@
                 x: 10,
                 y: 200,
                 color: "deeppink"
-            }/*,
+            },
             rectDown = {
                 width: 40,
                 height: 40,
                 x: 100,
-                y: 500,
+                y: 300,
                 color: "darkolivegreen"
             },
             rectLeft = {
                 width: 40,
                 height: 40,
                 x: 160,
-                y: 500,
+                y: 100,
                 color: "darkslateblue"
             },
             rectRight = {
                 width: 40,
                 height: 40,
                 x: 240,
-                y: 500,
+                y: 400,
                 color: "darkorange"
-            }*/
+            }
         ]
 
         /*
@@ -227,6 +227,7 @@
             }
             
         }
+        console.log(gameItems[0]);
 
         //Funksjon for å tegne elementer i canvas
         function drawElements() {
@@ -280,22 +281,20 @@
                     //TODO: ...deaktiver element, oppdater hits og tilstander for hit og miss
                 } else {
                     //TODO: Resett tilstander for hit og miss
-                    gameConfig.hitActive = false
-                    gameConfig.missActive = false
                 }
                 /* TODO:
                  * Sjekk om et element er på utsiden toppen av canvas.
                  * Hvis et item går på utsiden canvas, teller det som en miss, og
                  * man mister et liv, samtidig som elementet må deaktiveres og miss-tilstand endres.
-                 */
-                 if(
-                    item.y <= 10
-                 ){
-                    gameConfig.lives--
-                    gameConfig.missActive = true
-                    gameConfig.hitActive = false
+                 */ 
+                /*Setter til 10 pga da er firkant over active området, man kan ikke trykke på den da så 
+                gir mening at man mister livet da*/
+                 if(item.y <= 10){
+                    if(gameConfig.missActive == true){
+                        gameConfig.lives--
+                    }
+                    gameConfig.missActive = false
                  }
-                
             })
 
             //Dersom lives når 0, skal spillet settes i tilstanden gameover
