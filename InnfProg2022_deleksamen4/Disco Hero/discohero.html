@@ -108,9 +108,9 @@
                 width: 40,
                 height: 40,
                 x: 10,
-                y: 500,
+                y: 200,
                 color: "deeppink"
-            },
+            }/*,
             rectDown = {
                 width: 40,
                 height: 40,
@@ -131,7 +131,7 @@
                 x: 240,
                 y: 500,
                 color: "darkorange"
-            }
+            }*/
         ]
 
         /*
@@ -139,6 +139,11 @@
          * basert på tilfeldig valgt antall millisekunder. Min- og max-verdi for millisekunder
          * bestemmes av nivå spillet er på.
          */
+
+        function randMinMax(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
         function randomizeTime() {
             /* TODO:
              * Nivåsjekk for å øke hastigheten elementer tegnes i.
@@ -252,21 +257,22 @@
                 ctx.fillStyle = item.color
                 ctx.fillRect(item.x, item.y, item.height, item.width)
                 ctx.closePath()
-                
 
                 //TODO: Juster elementets verdi for vertikal bevegelse oppover
                 item.y = item.y - 1
-
+                //console.log(gameConfig.activeArea.h);
                 /*
                  * Kollisjonssjekk mellom item og aktivt område
                  * Kollisjon skjer når item er vertikalt innenfor aktivt område.
                  * Hvis kollisjon OG item er aktivt...
-                 *//*
+                 */
                 if(
                     //TODO: Skriv betingelse for kollisjon
+                    item.x + item.height >= gameConfig.activeArea.y
+                    
                 ) {
                     //TODO: ...og knapp med riktig item-type trykkes...
-                    
+                    console.log("hheh");
                         //TODO: ...deaktiver element, oppdater hits og tilstander for hit og miss
                         
                     
